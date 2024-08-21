@@ -95,7 +95,7 @@ const Header = () => {
               // color: 'black',
             }}
           >
-            Shop
+            BOOK NOW
           </Link>
         </Stack>
       </Stack>

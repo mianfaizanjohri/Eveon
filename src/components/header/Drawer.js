@@ -149,6 +149,18 @@ const DrawerButton = () => {
               >
                 Contact Us
               </Link>
+              <Link
+                onClick={() => nav('/Shop')}
+                fontWeight={'600'}
+                fontSize={{ base: '13px', xl: '15px' }}
+                color={'white'}
+                _hover={{
+                  textDecoration: 'none',
+                  color: 'black',
+                }}
+              >
+                 BOOK NOW
+              </Link>
               </Stack>
             </Stack>
           </DrawerBody>
