@@ -139,7 +139,7 @@ const DetailPage = () => {
             onClick={handleAddToCart}
             className="w-full lg:w-auto px-6 py-3 rounded-md text-white font-semibold bg-blue-500 hover:bg-blue-600 transition-colors duration-300"
           >
-            Buy Now
+            BOOK NOW
           </Button>
         </div>
       </div>

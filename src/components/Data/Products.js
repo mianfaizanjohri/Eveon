@@ -19,7 +19,7 @@ export const products = [
         'https://via.placeholder.com/600/6666FF',
       ],
     },
-    price: '260,000 PKR',
+    price: 260000, // Store price as a number
     model: 'Model A1',
     colors: ['Red', 'Black', 'Blue'],
     specifications: {
@@ -31,68 +31,5 @@ export const products = [
       brake: 'FRONT & REAR BIGGER DISK',
     },
   },
-  // {
-  //   id: 2,
-  //   name: 'Eveon Pronto',
-  //   images: {
-  //     Green: [
-  //       'https://eveon.pk/path/to/green-pronto-image.png',
-  //       'https://via.placeholder.com/600/00FF00',
-  //       'https://via.placeholder.com/600/66FF66',
-  //     ],
-  //     Yellow: [
-  //       'https://eveon.pk/path/to/yellow-pronto-image.png',
-  //       'https://via.placeholder.com/600/FFFF00',
-  //       'https://via.placeholder.com/600/FFDD00',
-  //     ],
-  //     Black: [
-  //       'https://eveon.pk/path/to/black-pronto-image.png',
-  //       'https://via.placeholder.com/600/000000',
-  //       'https://via.placeholder.com/600/333333',
-  //     ],
-  //   },
-  //   price: '199,000 PKR',
-  //   model: 'Model B2',
-  //   colors: ['Green', 'Yellow', 'Black'],
-  //   specifications: {
-  //     motor: '1200 W BLDC QS',
-  //     speed: '50-55 KM/H',
-  //     range: '80-90 KM',
-  //     battery: '72V 32 AH GRAPHENE',
-  //     tyreSize: '10 INCH ALLOY RIM',
-  //     brake: 'FRONT DISK REAR DRUM BRAKE',
-  //   },
-  // },
-  // {
-  //   id: 3,
-  //   name: 'Eveon JOY',
-  //   images: {
-  //     White: [
-  //       'https://eveon.pk/path/to/white-joy-image.png',
-  //       'https://via.placeholder.com/600/FFFFFF',
-  //       'https://via.placeholder.com/600/EEEEEE',
-  //     ],
-  //     Gray: [
-  //       'https://eveon.pk/path/to/gray-joy-image.png',
-  //       'https://via.placeholder.com/600/808080',
-  //       'https://via.placeholder.com/600/AAAAAA',
-  //     ],
-  //     Black: [
-  //       'https://eveon.pk/path/to/black-joy-image.png',
-  //       'https://via.placeholder.com/600/000000',
-  //       'https://via.placeholder.com/600/333333',
-  //     ],
-  //   },
-  //   price: '175,000 PKR',
-  //   model: 'Model C3',
-  //   colors: ['White', 'Gray', 'Black'],
-  //   specifications: {
-  //     motor: '1000 W BLDC QS',
-  //     speed: '45-50 KM/H',
-  //     range: '60-70 KM',
-  //     battery: '60V 26 AH GRAPHENE',
-  //     tyreSize: '10 INCH ALLOY RIM',
-  //     brake: 'FRONT DISK REAR DRUM BRAKE',
-  //   },
-  // },
+  // Add other products here...
 ];

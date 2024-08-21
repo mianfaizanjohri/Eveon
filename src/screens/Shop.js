@@ -18,6 +18,7 @@ import {
 } from '@chakra-ui/react';
 import { products } from '../components/Data/Products';
 import Layout from '../components/layout/Layout';
+import CartModal from '../components/Cartmodal/Cartmodal'; // Import the CartModal component
 
 const Shop = () => {
   const [selectedColors, setSelectedColors] = useState(
@@ -48,7 +49,7 @@ const Shop = () => {
       color: selectedColors[product.id],
     };
     dispatch(addToCart(selectedItem));
-    setIsCartOpen(true); // Open the cart sidebar
+    setIsCartOpen(true); // Open the cart modal
   };
 
   const handleViewDetails = (product) => {
@@ -57,26 +58,37 @@ const Shop = () => {
     });
   };
 
+  const formatPrice = (price) => {
+    return `${price.toLocaleString()} PKR`;
+  };
+
   return (
     <>
       <Layout>
         <div className="flex">
-          <div className="w-3/4 p-8">
+          <div className="w-full p-4 md:w-3/4 md:p-8">
             <div className="container mx-auto">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              <Box
+                display="grid"
+                gridTemplateColumns={{ base: '1fr', sm: '1fr 1fr', md: 'repeat(3, 1fr)' }}
+                gap={6}
+              >
                 {products.map((product) => (
-                  <Card key={product.id} maxW="sm">
+                  <Card key={product.id} maxW="sm" mx="auto">
                     <CardBody>
                       <Image
                         src={product.images[selectedColors[product.id]][0]} // Display the first image of the selected color
                         alt={product.name}
                         borderRadius="lg"
+                        objectFit="cover"
+                        width="100%"
+                        height={{ base: '200px', md: '250px', lg: '300px' }} // Responsive height
                       />
                       <Stack mt="6" spacing="3">
                         <Heading size="md">{product.name}</Heading>
                         <Text>{product.model}</Text>
                         <Text color="blue.600" fontSize="2xl">
-                          {product.price}
+                          {formatPrice(product.price)}
                         </Text>
                         <Box mt="2">
                           {product.colors.map((color) => (
@@ -98,13 +110,13 @@ const Shop = () => {
                     <Divider />
                     <CardFooter>
                       <ButtonGroup spacing="2">
-                        <Button
+                        {/* <Button
                           variant="solid"
                           colorScheme="blue"
                           onClick={() => handleAddToCart(product)}
                         >
                           Buy now
-                        </Button>
+                        </Button> */}
                         <Button
                           variant="ghost"
                           colorScheme="blue"
@@ -116,33 +128,14 @@ const Shop = () => {
                     </CardFooter>
                   </Card>
                 ))}
-              </div>
+              </Box>
             </div>
-          </div>
-
-          {/* Cart Sidebar */}
-          <div className={`w-1/4 bg-gray-100 p-4 ${isCartOpen ? 'block' : 'hidden'}`}>
-            <h2 className="text-xl font-semibold mb-4">Your Cart</h2>
-            {cartItems.length === 0 ? (
-              <p>Your cart is empty</p>
-            ) : (
-              <ul>
-                {cartItems.map((item, index) => (
-                  <li key={index} className="flex justify-between mt-2">
-                    <div>
-                      {item.name} - {item.color}
-                    </div>
-                    <div>{item.price}</div>
-                  </li>
-                ))}
-              </ul>
-            )}
-            <Button className="mt-4" colorScheme="blue" onClick={() => setIsCartOpen(false)}>
-              Close Cart
-            </Button>
           </div>
         </div>
       </Layout>
+
+      {/* Cart Modal */}
+      <CartModal isOpen={isCartOpen} closeModal={() => setIsCartOpen(false)} />
     </>
   );
 };
