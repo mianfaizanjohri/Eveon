@@ -1,35 +1,58 @@
-import test from '../../assets/Pshoot/test.png';
-import one from '../../assets/Pshoot/2.png';
-import two from '../../assets/Pshoot/3.png';
+import r1 from "../../assets/Pshoot/RED/r1.png";
+import r2 from "../../assets/Pshoot/RED/r2.png";
+import r3 from "../../assets/Pshoot/RED/r3.png";
+import r4 from "../../assets/Pshoot/RED/r4.png";
+import w1 from "../../assets/Pshoot/White/w1.png";
+import w2 from "../../assets/Pshoot/White/w2.png";
+import w3 from "../../assets/Pshoot/White/w3.png";
+import w4 from "../../assets/Pshoot/White/w4.png";
 
 export const products = [
   {
     id: 1,
-    name: 'Eveon Leopard',
+    name: "PRONTO",
     images: {
-      Red: [test, one, two],
-      Black: [
-        'https://bikeindia.in/wp-content/uploads/2017/07/Matte-Black-Dominar-1.jpg',
-        'https://via.placeholder.com/600/000000',
-        'https://via.placeholder.com/600/333333',
-      ],
-      Blue: [
-        'https://imgd.aeplcdn.com/1280x720/n/bw/models/colors/yamaha-select-model-racing-blue-1575873052608.jpg?q=100',
-        'https://via.placeholder.com/600/0000FF',
-        'https://via.placeholder.com/600/6666FF',
-      ],
+      Red: [r1, r3, r2, r4],
+      white: [w1, w2, w3, w4],
     },
-    price: 260000, // Store price as a number
-    model: 'Model A1',
-    colors: ['Red', 'Black', 'Blue'],
+    price: "Rs 199,000",
+    colors: ["white", "Red"],
     specifications: {
-      motor: '1200 W BLDC QS',
-      speed: '50-55 KM/H',
-      range: '120 KM (ECO MODE)',
-      battery: '72V 38 AH GRAPHENE',
-      tyreSize: '12 INCH ALLOY RIM',
-      brake: 'FRONT & REAR BIGGER DISK',
+      motor: "1200 W BLDC QS",
+      speed: "50-55 KM/H",
+      range: "120 KM (ECO MODE)",
+      battery: "72V 38 AH GRAPHENE",
+      tyreSize: "12 INCH ALLOY RIM",
+      brake: "FRONT & REAR BIGGER DISK",
+      electricMotorPower: "2000 Watts",
+      warrantyPeriod:
+        "24 Months Motor & 12 Months Batteries and Controller warranty",
+      topSpeed: "70 Km/h",
     },
+    description: `Introducing123 our cutting-edge electric scooter, meticulously engineered to satisfy the thrill-seeking desires of modern adventurers while championing eco-consciousness. Imagine effortlessly navigating through cityscapes, powered by the sheer force of our high-performance 2000W electric motor, propelling you to exhilarating speeds of up to 70 KM/hr. With an unmatched range of up to 120 KM, every ride becomes an adrenaline-fueled journey of exploration and discovery, urging you to push the boundaries and uncover new vistas.
+    
+    Crafted with precision and innovation, our electric scooter transcends mere transportation—it's a symbol of style and sustainability. Its sleek design and sturdy construction guarantee both durability and reliability, ensuring each expedition is as seamless and electrifying as the last.`,
+    detailedSpecifications: [
+      {
+        title: "Speed123",
+        value: "70 Km/h",
+      },
+      {
+        title: "Range",
+        value: "120 KM",
+      },
+      {
+        title: "Battery Type",
+        value: "72V 35Ah Graphene Batteries",
+      },
+      {
+        title: "Electric Motor Power",
+        value: "2000 Watts",
+      },
+      {
+        title: "Warranty Period",
+        value: "24 Months Motor & 12 Months Batteries and Controller warranty",
+      },
+    ],
   },
-  // Add other products here...
 ];

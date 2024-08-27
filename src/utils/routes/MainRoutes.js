@@ -9,6 +9,7 @@ import ProntoDetail from '../../components/models/ProntoDetail';
 import JoyDetail from '../../components/models/JoyDetail';
 import Shop from '../../screens/Shop';
 import DetailPage from '../../screens/Detailpage';
+import OrderPage from '../../screens/OrderPage';
 
 const MainRoutes = () => {
   return (
@@ -22,6 +23,7 @@ const MainRoutes = () => {
       <Route path="/booking" element={<BookingOrder />} />
       <Route path="/Shop" element={<Shop />} />
       <Route path="/product/:id" element={<DetailPage />} />
+      <Route path="/order" element={<OrderPage />} />
     </Routes>
   )
 }

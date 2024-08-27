@@ -2,23 +2,9 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addToCart } from '../store/cartSlice';
-import {
-  Box,
-  Image,
-  Badge,
-  Button,
-  Card,
-  CardBody,
-  Heading,
-  Stack,
-  Text,
-  Divider,
-  CardFooter,
-  ButtonGroup,
-} from '@chakra-ui/react';
 import { products } from '../components/Data/Products';
 import Layout from '../components/layout/Layout';
-import CartModal from '../components/Cartmodal/Cartmodal'; // Import the CartModal component
+import CartModal from '../components/Cartmodal/Cartmodal';
 
 const Shop = () => {
   const [selectedColors, setSelectedColors] = useState(
@@ -68,67 +54,47 @@ const Shop = () => {
         <div className="flex">
           <div className="w-full p-4 md:w-3/4 md:p-8">
             <div className="container mx-auto">
-              <Box
-                display="grid"
-                gridTemplateColumns={{ base: '1fr', sm: '1fr 1fr', md: 'repeat(3, 1fr)' }}
-                gap={6}
-              >
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {products.map((product) => (
-                  <Card key={product.id} maxW="sm" mx="auto">
-                    <CardBody>
-                      <Image
-                        src={product.images[selectedColors[product.id]][0]} // Display the first image of the selected color
+                  <div key={product.id} className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                    <div className="h-64 overflow-hidden">
+                      <img
+                        src={product.images[selectedColors[product.id]][0]}
                         alt={product.name}
-                        borderRadius="lg"
-                        objectFit="cover"
-                        width="100%"
-                        height={{ base: '200px', md: '250px', lg: '300px' }} // Responsive height
+                        className="w-full h-full object-cover"
                       />
-                      <Stack mt="6" spacing="3">
-                        <Heading size="md">{product.name}</Heading>
-                        <Text>{product.model}</Text>
-                        <Text color="blue.600" fontSize="2xl">
-                          {formatPrice(product.price)}
-                        </Text>
-                        <Box mt="2">
-                          {product.colors.map((color) => (
-                            <Badge
-                              key={color}
-                              borderRadius="full"
-                              px="2"
-                              mr="1"
-                              colorScheme={selectedColors[product.id] === color ? 'blue' : 'gray'}
-                              cursor="pointer"
-                              onClick={() => handleColorChange(product.id, color)}
-                            >
-                              {color}
-                            </Badge>
-                          ))}
-                        </Box>
-                      </Stack>
-                    </CardBody>
-                    <Divider />
-                    <CardFooter>
-                      <ButtonGroup spacing="2">
-                        {/* <Button
-                          variant="solid"
-                          colorScheme="blue"
-                          onClick={() => handleAddToCart(product)}
-                        >
-                          Buy now
-                        </Button> */}
-                        <Button
-                          variant="ghost"
-                          colorScheme="blue"
+                    </div>
+                    <div className="p-4">
+                      <h2 className="text-lg font-semibold text-gray-800">{product.name}</h2>
+                      <p className="text-gray-600">{product.model}</p>
+                      <p className="text-blue-600 text-xl mt-2">{formatPrice(product.price)}</p>
+                      <div className="mt-3">
+                        {product.colors.map((color) => (
+                          <button
+                            key={color}
+                            className={`inline-block px-3 py-1 mr-2 mb-2 rounded border ${
+                              selectedColors[product.id] === color
+                                ? 'bg-blue-600 text-white'
+                                : 'bg-gray-200 text-gray-800'
+                            }`}
+                            onClick={() => handleColorChange(product.id, color)}
+                          >
+                            {color}
+                          </button>
+                        ))}
+                      </div>
+                      <div className="mt-4 flex justify-end items-center">
+                        <button
+                          className="text-blue-600 hover:underline cursor-pointer"
                           onClick={() => handleViewDetails(product)}
                         >
-                          Details
-                        </Button>
-                      </ButtonGroup>
-                    </CardFooter>
-                  </Card>
+                          View Details
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 ))}
-              </Box>
+              </div>
             </div>
           </div>
         </div>
