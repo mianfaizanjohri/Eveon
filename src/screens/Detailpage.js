@@ -4,6 +4,8 @@ import { products } from '../components/Data/Products';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { Button, Spinner } from '@chakra-ui/react';
 import Layout from '../components/layout/Layout';
+// import { FaTruckFast } from "react-icons/fa6";
+// import { FaShieldAlt } from "react-icons/fa";
 
 const DetailPage = () => {
   const { id } = useParams();
@@ -15,6 +17,8 @@ const DetailPage = () => {
   const [imageIndex, setImageIndex] = useState(0);
   const [loading, setLoading] = useState(false);
   const [featureLoading, setFeatureLoading] = useState(Array(product.images[selectedColor].length).fill(true));
+  const [mainImage, setMainImage] = useState(product.images[selectedColor][0]); // Default main imageconst [mainImage, setMainImage] = useState(product.images[selectedColor][0]); // Default main image
+
 
   useEffect(() => {
     setImageIndex(0); // Reset the image index when color changes
@@ -22,25 +26,12 @@ const DetailPage = () => {
 
   const handleColorChange = (color) => {
     setSelectedColor(color);
+    setMainImage(product.images[color][0]); // Reset the main image to the first image of the new color
   };
 
-  const handleNextImage = () => {
-    setLoading(true);
-    setImageIndex((prevIndex) =>
-      prevIndex === product.images[selectedColor].length - 1 ? 0 : prevIndex + 1
-    );
-  };
 
-  const handlePrevImage = () => {
-    setLoading(true);
-    setImageIndex((prevIndex) =>
-      prevIndex === 0 ? product.images[selectedColor].length - 1 : prevIndex - 1
-    );
-  };
 
-  const handleImageLoad = () => {
-    setLoading(false);
-  };
+
 
   const handleFeatureImageLoad = (index) => {
     setFeatureLoading((prevLoading) => {
@@ -80,101 +71,116 @@ const DetailPage = () => {
     },
   ];
 
+
+
   return (
     <>
       <Layout>
-        <div className="container mx-auto p-4 flex flex-col lg:flex-row items-center">
-          {/* Left Side */}
-          <div className="lg:w-3/5 flex flex-col items-center">
-            <div className="relative w-full h-auto mb-4">
-              <FaArrowLeft
-                size={24}
-                onClick={handlePrevImage}
-                className="absolute top-1/2 left-0 transform -translate-y-1/2 cursor-pointer z-10 text-gray-600 hover:text-gray-800 transition-colors"
-              />
-              <div className="relative w-full h-auto">
-                {loading && (
-                  <div className="absolute inset-0 flex items-center justify-center z-20">
-                    <Spinner size="xl" color="blue.500" />
-                  </div>
-                )}
+        <div className="bg-gray-50 p-8">
+          <div className="mx-auto overflow-hidden">
+            <div className="flex flex-wrap">
+              {/* Image Gallery */}
+              <div className="w-full md:w-1/2 p-6 flex flex-col justify-center items-center">
                 <img
-                  src={product.images[selectedColor][imageIndex]}
+                  src={mainImage}
                   alt={product.name}
-                  className={`w-full h-auto object-contain rounded-lg transition-transform duration-300 ease-in-out transform hover:scale-105 ${loading ? 'opacity-0' : 'opacity-100'}`}
-                  onLoad={handleImageLoad}
+                  width={500}
+                  height={600}
+                  className="w-[500px] h-auto rounded-lg shadow-sm"
                 />
+                <div className="flex justify-center mt-4 space-x-2">
+                  {product.images[selectedColor].map((img, index) => (
+                    <div key={index} className="w-1/5">
+                      <img
+                        src={img}
+                        alt={`Thumbnail ${index + 1}`}
+                        width={100}
+                        height={120}
+                        className="w-auto h-auto cursor-pointer shadow-sm hover:shadow-lg transition-shadow duration-300"
+                        onClick={() => setMainImage(img)} // Set the clicked thumbnail as the main image
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
-              <FaArrowRight
-                size={24}
-                onClick={handleNextImage}
-                className="absolute top-1/2 right-0 transform -translate-y-1/2 cursor-pointer z-10 text-gray-600 hover:text-gray-800 transition-colors"
-              />
-            </div>
-            <div className="flex justify-center space-x-2 mb-4">
-              {product.colors.map((color) => (
-                <Button
-                  key={color}
-                  onClick={() => handleColorChange(color)}
-                  variant={selectedColor === color ? 'solid' : 'outline'}
-                  colorScheme="blue"
-                  className="text-sm font-semibold"
-                >
-                  {color}
-                </Button>
-              ))}
-            </div>
-          </div>
 
-          {/* Right Side */}
-          <div className="lg:w-3/6 lg:ml-8 mt-8 lg:mt-0 text-center lg:text-left">
-            <h1 className="text-3xl font-bold mb-4 text-gray-800">{product.name}</h1>
-            <p className="text-xl text-gray-600 mb-4">{product.model}</p>
-            <p className="text-2xl font-semibold text-blue-600 mb-6">{product.price}</p>
+              {/* Product Details */}
+              <div className="w-full md:w-1/2 p-6">
+                <h1 className="text-2xl font-semibold text-gray-800 mb-4">{product.name}</h1>
+                <div className="mb-2 flex gap-2">
+                  <p className="text-xl text-gray-400 line-through">{product.oldPrice}</p>
+                  <p className="text-xl font-bold text-red-600">{product.newPrice}</p>
+                </div>
 
-            <div className="bg-gray-100 p-4 rounded-lg shadow-lg mb-6">
-              <h2 className="text-xl font-bold text-gray-800 mb-2">Specifications</h2>
-              <ul className="text-gray-700">
-                <li className="mb-2"><strong>Motor:</strong> {product.specifications.motor}</li>
-                <li className="mb-2"><strong>Speed:</strong> {product.specifications.speed}</li>
-                <li className="mb-2"><strong>Range:</strong> {product.specifications.range}</li>
-                <li className="mb-2"><strong>Battery:</strong> {product.specifications.battery}</li>
-                <li className="mb-2"><strong>Tyre Size:</strong> {product.specifications.tyreSize}</li>
-                <li><strong>Brake:</strong> {product.specifications.brake}</li>
-              </ul>
+                {/* Color Selection */}
+                <div className="mb-4">
+                  <p className="text-lg font-semibold text-gray-800">Select Color:</p>
+                  <div className="flex gap-4 mt-2">
+                    {product.colors.map((color) => (
+                      <button
+                        key={color}
+                        className={`px-4 py-2 rounded-md shadow-sm border ${selectedColor === color ? 'bg-gray-700 text-white' : 'bg-gray-200 text-gray-800'}`}
+                        onClick={() => handleColorChange(color)}
+                      >
+                        {color}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <ul className="list-disc list-inside text-gray-600 mb-4">
+                  <div className='flex items-center gap-3'>
+                    {/* <FaTruckFast /> */}
+                    <p>FREE delivery over Rs. 3499!</p>
+                  </div>
+                  <div className='md:ml-5 text-xs text-gray-400 p-3'>
+                    <p>Rs.200 delivery charges nationwide.</p>
+                    <p>Delivery within 2-5 days.</p>
+                  </div>
+
+                  <div className='flex items-center gap-3'>
+                    {/* <FaShieldAlt /> */}
+                    <p>FREE returns and exchanges!</p>
+                  </div>
+                  <div className='md:ml-5 text-sm text-gray-400 p-3'>
+                    <p><span className='text-gray-500 font-bold'>100%</span> <span className='text-xs'>customer satisfaction guaranteed.</span></p>
+                    <p><span className='text-gray-500 font-bold'>FREE LIFETIME</span> <span className='text-xs'>returns and exchanges.</span></p>
+                  </div>
+                </ul>
+                <div className='mx-auto flex'>
+                  <button
+                    className="w-full bg-gray-700 text-white px-6 py-2 rounded-md shadow-md hover:bg-gray-900 transition-colors duration-300"
+                    onClick={() => handleAddToCart(product)}
+                  >
+                    Buy Now
+                  </button>
+                </div>
+              </div>
             </div>
-
-            <Button
-              colorScheme="blue"
-              onClick={handleAddToCart}
-              className="w-full lg:w-auto px-6 py-3 rounded-md text-white font-semibold bg-blue-500 hover:bg-blue-600 transition-colors duration-300"
-            >
-              BOOK NOW
-            </Button>
           </div>
         </div>
 
+
         {/* Performance Details Section */}
-        <div className="flex flex-col md:flex-row items-center justify-center p-8 bg-gray-50">
-          <div className="md:w-2/3 text-left">
-            <h1 className="text-2xl md:text-4xl font-bold mb-4">Performance Details of {product.name}</h1>
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 p-8 bg-gray-50 items-start">
+          <div className="md:col-span-2 text-left">
+            <h1 className="text-2xl md:text-4xl font-bold mb-4 text-center">Performance Details of {product.name}</h1>
             <p className="text-gray-600 text-justify leading-relaxed mb-6">
               {product.description}
             </p>
           </div>
-          <div className="md:w-1/3 mt-8 md:mt-0 md:ml-8">
-            <div className="bg-white shadow-md rounded-lg p-6">
-              <ul className="space-y-4">
-                {product.detailedSpecifications.map((spec, index) => (
-                  <li key={index} className="flex justify-between shadow-lg p-3">
-                    <span className="font-bold text-lg text-green-600">{spec.title}</span>
-                    <span className='font-bold'>{spec.value}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="md:col-span-2 bg-white shadow-md rounded-lg p-6">
+            <ul className="space-y-4">
+              {product.detailedSpecifications.map((spec, index) => (
+                <li key={index} className="flex justify-between shadow-lg p-3">
+                  <span className="font-bold text-sm   text-green-600">{spec.title}</span>
+                  <span className='font-bold text-sm  '>{spec.value}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
+
 
         <div className="container mx-auto py-8">
           <h2 className="text-center text-3xl font-bold mb-8">{product.name} FEATURES</h2>

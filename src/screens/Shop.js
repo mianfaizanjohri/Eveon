@@ -54,14 +54,14 @@ const Shop = () => {
         <div className="flex">
           <div className="w-full p-4 md:w-3/4 md:p-8">
             <div className="container mx-auto">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-6">
                 {products.map((product) => (
                   <div key={product.id} className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
                     <div className="h-64 overflow-hidden">
                       <img
                         src={product.images[selectedColors[product.id]][0]}
                         alt={product.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                       />
                     </div>
                     <div className="p-4">
