@@ -18,16 +18,16 @@ export const products = [
     price: "Rs 199,000",
     colors: ["white", "Red"],
     specifications: {
-      motor: "1200 W BLDC QS",
-      speed: "50-55 KM/H",
-      range: "120 KM (ECO MODE)",
-      battery: "72V 38 AH GRAPHENE",
-      tyreSize: "12 INCH ALLOY RIM",
-      brake: "FRONT & REAR BIGGER DISK",
-      electricMotorPower: "2000 Watts",
-      warrantyPeriod:
+      Motor: "1200 W BLDC QS",
+      Speed: "50-55 KM/H",
+      Range: "120 KM (ECO MODE)",
+      Battery: "72V 38 AH GRAPHENE",
+      TyreSize: "12 INCH ALLOY RIM",
+      Brake: "FRONT & REAR BIGGER DISK",
+      ElectricMotorPower: "2000 Watts",
+      WarrantyPeriod:
         "24 Months Motor & 12 Months Batteries and Controller warranty",
-      topSpeed: "70 Km/h",
+      TopSpeed: "70 Km/h",
     },
     description: `Introducing123 our cutting-edge electric scooter, meticulously engineered to satisfy the thrill-seeking desires of modern adventurers while championing eco-consciousness. Imagine effortlessly navigating through cityscapes, powered by the sheer force of our high-performance 2000W electric motor, propelling you to exhilarating speeds of up to 70 KM/hr. With an unmatched range of up to 120 KM, every ride becomes an adrenaline-fueled journey of exploration and discovery, urging you to push the boundaries and uncover new vistas.
     
