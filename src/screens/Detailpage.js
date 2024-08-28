@@ -4,6 +4,7 @@ import { products } from '../components/Data/Products';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { Button, Spinner, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, useDisclosure } from '@chakra-ui/react';
 import Layout from '../components/layout/Layout';
+import { FaMotorcycle } from "react-icons/fa6";
 
 const DetailPage = () => {
   const { id } = useParams();
@@ -14,6 +15,7 @@ const DetailPage = () => {
   const initialColor = location.state?.selectedColor || product.colors[0];
   const [selectedColor, setSelectedColor] = useState(initialColor);
   const [imageIndex, setImageIndex] = useState(0);
+  const [mainImageLoading, setMainImageLoading] = useState(true); // Main image loading state
   const [featureLoading, setFeatureLoading] = useState(Array(product.images[selectedColor].length).fill(true));
   const [mainImage, setMainImage] = useState(product.images[selectedColor][0]); // Default main image
 
@@ -23,6 +25,7 @@ const DetailPage = () => {
 
   const handleColorChange = (color) => {
     setSelectedColor(color);
+    setMainImageLoading(true); // Set loading state to true
     setMainImage(product.images[color][0]); // Reset the main image to the first image of the new color
   };
 
@@ -55,25 +58,6 @@ const DetailPage = () => {
     setMainImage(product.images[selectedColor][(imageIndex - 1 + product.images[selectedColor].length) % product.images[selectedColor].length]);
   };
 
-  const features = [
-    {
-      image: product.images[selectedColor][0],
-      title: 'Daylight Running Lamp',
-    },
-    {
-      image: product.images[selectedColor][1],
-      title: 'Big Storage Space',
-    },
-    {
-      image: product.images[selectedColor][2],
-      title: 'Digital Instrument Cluster',
-    },
-    {
-      image: product.images[selectedColor][3],
-      title: 'Digital Instrument Cluster',
-    },
-  ];
-
   return (
     <>
       <Layout>
@@ -82,12 +66,18 @@ const DetailPage = () => {
             <div className="flex flex-wrap">
               {/* Image Gallery */}
               <div className="w-full md:w-1/2 p-6 flex flex-col justify-center items-center">
+                {mainImageLoading && (
+                  <div className="absolute inset-0 flex items-center justify-center z-20">
+                    <Spinner size="xl" color="green.500" />
+                  </div>
+                )}
                 <img
                   src={mainImage}
                   alt={product.name}
                   width={500}
                   height={600}
-                  className="w-[500px] h-auto rounded-lg shadow-sm cursor-pointer"
+                  className={`w-[500px] h-auto rounded-lg shadow-sm cursor-pointer ${mainImageLoading ? 'opacity-0' : 'opacity-100'}`}
+                  onLoad={() => setMainImageLoading(false)} // Set loading state to false when the image loads
                   onClick={onOpen} // Open modal on click
                 />
                 <div className="flex justify-center mt-4 space-x-2">
@@ -100,6 +90,7 @@ const DetailPage = () => {
                         height={120}
                         className="w-auto h-auto cursor-pointer shadow-sm hover:shadow-lg transition-shadow duration-300"
                         onClick={() => {
+                          setMainImageLoading(true); // Set loading state to true when a new thumbnail is clicked
                           setMainImage(img);
                           setImageIndex(index);
                         }} // Set the clicked thumbnail as the main image
@@ -113,8 +104,8 @@ const DetailPage = () => {
               <div className="w-full md:w-1/2 p-6">
                 <h1 className="text-2xl font-semibold text-gray-800 mb-4">{product.name}</h1>
                 <div className="mb-2 flex gap-2">
-                  <p className="text-xl text-gray-400 line-through">{product.oldPrice}</p>
-                  <p className="text-xl font-bold text-red-600">{product.newPrice}</p>
+                  {/* <p className="text-xl text-gray-400 line-through">{product.price}</p> */}
+                  <p className="text-xl font-bold text-red-600">{product.price}</p>
                 </div>
 
                 {/* Color Selection */}
@@ -150,7 +141,7 @@ const DetailPage = () => {
                     className="w-full bg-gray-700 text-white px-6 py-2 rounded-md shadow-md hover:bg-gray-900 transition-colors duration-300"
                     onClick={() => handleAddToCart(product)}
                   >
-                    Buy Now
+                    Book Now
                   </button>
                 </div>
               </div>
@@ -161,8 +152,8 @@ const DetailPage = () => {
         {/* Performance Details Section */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 p-8 bg-gray-200 items-start">
           <div className="md:col-span-2 text-left">
-            <h1 className="text-2xl md:text-4xl font-bold mb-4 text-center">Performance Details of {product.name}</h1>
-            <p className="text-gray-600 text-justify leading-relaxed mb-6">
+            <h1 className="text-2xl md:text-4xl font-bold mb-4 text-center lg:mt-20">Performance Details of {product.name}</h1>
+            <p className="text-gray-600 text-justify leading-relaxed mb-6 lg:mt-5">
               {product.description}
             </p>
           </div>
@@ -181,7 +172,7 @@ const DetailPage = () => {
         <div className="container mx-auto py-8">
           <h2 className="text-center text-3xl font-bold mb-8">{product.name} FEATURES</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-2">
-            {features.map((feature, index) => (
+            {product.featureImages[selectedColor].map((feature, index) => (
               <div key={index} className="relative flex flex-col items-center">
                 {featureLoading[index] && (
                   <div className="absolute inset-0 flex items-center justify-center z-20">
@@ -194,9 +185,8 @@ const DetailPage = () => {
                   className={`w-full bg-gray-100 h-auto object-cover border-2 border-green-500 rounded-lg mb-4 ${featureLoading[index] ? 'opacity-0' : 'opacity-100'}`}
                   onLoad={() => handleFeatureImageLoad(index)}
                 />
-                <p className="text-xl underline font-bold text-green-600 text-center">
-                  {feature.title}
-                </p>
+                <p className="text-xl underline font-bold text-green-600 text-center">{feature.title}</p>
+                <p className="text-gray-600 text-center">{feature.description}</p>
               </div>
             ))}
           </div>
