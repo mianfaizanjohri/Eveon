@@ -29,11 +29,43 @@ const OrderPage = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Handle form submission, maybe send data to the backend
-        console.log('Order Details:', formData);
+
+        try {
+            const response = await fetch('http://api.eveon.pk//order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    cnic: formData.cnic,
+                    contact: formData.contact,
+                    email: formData.email,
+                    product: {
+                        name: cart.name,
+                        price: cart.price,
+                        color: cart.color,
+                    }
+                }),
+            });
+
+            const data = await response.json();
+            console.log(data);
+
+            if (response.ok) {
+                // Handle success
+                navigate('/success'); // Redirect to success page
+            } else {
+                // Handle error
+                console.error(data.message);
+            }
+        } catch (error) {
+            console.error('Error submitting the order:', error);
+        }
     };
+
 
     if (!cart) {
         return null; // Return null to avoid rendering the form if cart is undefined
