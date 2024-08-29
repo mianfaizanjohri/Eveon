@@ -172,25 +172,32 @@ const DetailPage = () => {
         <div className="container mx-auto py-8">
           <h2 className="text-center text-3xl font-bold mb-8">{product.name} FEATURES</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-2">
-            {product.featureImages[selectedColor].map((feature, index) => (
-              <div key={index} className="relative flex flex-col items-center">
-                {featureLoading[index] && (
-                  <div className="absolute inset-0 flex items-center justify-center z-20">
-                    <Spinner size="xl" color="green.500" />
-                  </div>
-                )}
-                <img
-                  src={feature.image}
-                  alt={feature.title}
-                  className={`w-full bg-gray-100 h-auto object-cover border-2 border-green-500 rounded-lg mb-4 ${featureLoading[index] ? 'opacity-0' : 'opacity-100'}`}
-                  onLoad={() => handleFeatureImageLoad(index)}
-                />
-                <p className="text-xl underline font-bold text-green-600 text-center">{feature.title}</p>
-                <p className="text-gray-600 text-center">{feature.description}</p>
+            {product.featureImages[selectedColor] && product.featureImages[selectedColor].length > 0 ? (
+              product.featureImages[selectedColor].map((feature, index) => (
+                <div key={index} className="relative flex flex-col items-center">
+                  {featureLoading[index] && (
+                    <div className="absolute inset-0 flex items-center justify-center z-20">
+                      <Spinner size="xl" color="green.500" />
+                    </div>
+                  )}
+                  <img
+                    src={feature.image}
+                    alt={feature.title}
+                    className={`w-full bg-gray-100 h-auto object-cover border-2 border-green-500 rounded-lg mb-4 ${featureLoading[index] ? 'opacity-0' : 'opacity-100'}`}
+                    onLoad={() => handleFeatureImageLoad(index)}
+                  />
+                  <p className="text-xl underline font-bold text-green-600 text-center">{feature.title}</p>
+                  <p className="text-gray-600 text-center">{feature.description}</p>
+                </div>
+              ))
+            ) : (
+              <div className="col-span-full text-center text-xl text-gray-600">
+                No data available
               </div>
-            ))}
+            )}
           </div>
         </div>
+
       </Layout>
 
       {/* Image Modal */}
