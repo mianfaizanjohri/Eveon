@@ -11,6 +11,8 @@ import Shop from '../../screens/Shop';
 import DetailPage from '../../screens/Detailpage';
 import OrderPage from '../../screens/OrderPage';
 import Success from '../../screens/Success';
+import Login from '../../screens/Login';
+import Admin from '../../screens/Admin';
 
 const MainRoutes = () => {
   return (
@@ -25,6 +27,8 @@ const MainRoutes = () => {
       <Route path="/Shop" element={<Shop />} />
       <Route path="/product/:id" element={<DetailPage />} />
       <Route path="/order" element={<OrderPage />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/admin" element={<Admin />} />
       <Route path="/success" element={<Success />} />
     </Routes>
   )

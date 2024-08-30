@@ -161,6 +161,18 @@ const DrawerButton = () => {
               >
                  BOOK NOW
               </Link>
+              <Link
+                onClick={() => nav('/login')}
+                fontWeight={'600'}
+                fontSize={{ base: '13px', xl: '15px' }}
+                color={'white'}
+                _hover={{
+                  textDecoration: 'none',
+                  color: 'black',
+                }}
+              >
+                 Login
+              </Link>
               </Stack>
             </Stack>
           </DrawerBody>

@@ -17,6 +17,16 @@ import Drawer from './Drawer';
 const Header = () => {
   const nav = useNavigate();
 
+  const getuser = sessionStorage.getItem('user')
+
+  const Logout = () => {
+    sessionStorage.removeItem('user');  // Clear session storage or handle logout logic
+    nav('/')
+    window.location.reload()
+
+  }
+
+
   return (
     <>
 
@@ -95,8 +105,38 @@ const Header = () => {
               // color: 'black',
             }}
           >
-            BOOK NOW
+            Book Now
           </Link>
+          {
+            getuser ? (
+              <Link
+                onClick={Logout}
+                fontWeight={'600'}
+                fontSize={{ base: 12, lg: 16 }}
+                color={'white'}
+                _hover={{
+                  textDecoration: 'none',
+                  // color: 'black',
+                }}
+              >
+                Logout
+              </Link>
+            ) : (
+              <Link
+                onClick={() => nav('/login')}
+                fontWeight={'600'}
+                fontSize={{ base: 12, lg: 16 }}
+                color={'white'}
+                _hover={{
+                  textDecoration: 'none',
+                  // color: 'black',
+                }}
+              >
+                Login
+              </Link>
+            )
+          }
+
         </Stack>
       </Stack>
 

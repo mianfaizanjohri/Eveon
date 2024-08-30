@@ -33,7 +33,7 @@ const OrderPage = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch('http://api.eveon.pk//order', {
+            const response = await fetch('https://api.eveon.pk/order', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
