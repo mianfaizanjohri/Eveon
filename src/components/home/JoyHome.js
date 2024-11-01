@@ -6,6 +6,7 @@ import speed from '../../assets/images/speed.png';
 import battery from '../../assets/images/battery.png';
 import km from '../../assets/images/km.png';
 import price from '../../assets/images/Price.png';
+import { Link } from 'react-router-dom';
 
 // Convert Chakra UI components to motion components
 const MotionStack = motion(Stack);
@@ -51,7 +52,7 @@ const JoyHome = () => {
       <MotionStack
         px={{ base: 6, md: 10 }}
         py={10}
-        spacing={{base:10,md:12,lg:16}}
+        spacing={{ base: 10, md: 12, lg: 16 }}
         alignItems={'center'}
         initial="offscreen"
         whileInView="onscreen"
@@ -64,7 +65,7 @@ const JoyHome = () => {
           alignItems={'center'}
           justifyContent={'center'}
           p={2}
-          w={{ base: '250px',md:'300px' }}
+          w={{ base: '250px', md: '300px' }}
           variants={textVariants}
         >
           <Text
@@ -77,13 +78,16 @@ const JoyHome = () => {
           </Text>
         </Stack>
 
-        <MotionStack
-          alignItems={'center'}
-          w={{ base: '100%', lg: '100%' }}
-          variants={imageVariants}
-        >
-          <MotionImg w={{ base: '100%', lg: '60%' }} src={JoyModel} />
-        </MotionStack>
+
+        <Link to={`/product/3`}>
+          <MotionStack
+            alignItems={'center'}
+            w={{ base: '100%', lg: '100%' }}
+            variants={imageVariants}
+          >
+            <MotionImg w={{ base: '100%', lg: '60%' }} src={JoyModel} />
+          </MotionStack>
+        </Link>
         <MotionStack
           alignItems={'center'}
           w={{ base: '100%', lg: '100%' }}
@@ -91,12 +95,12 @@ const JoyHome = () => {
         >
           <SimpleGrid columns={[2, null, 4]} spacing='40px'>
             <Stack alignItems={'center'} gap={4}>
-              <Img w={{base:12,md:14,lg:16}} src={price} />
+              <Img w={{ base: 12, md: 14, lg: 16 }} src={price} />
               <Text
                 className="telex-regular"
                 fontSize={'sm'}
                 fontWeight={'600'}
-            textAlign={'center'}
+                textAlign={'center'}
 
               >
                 Rs. 175000{' '}
@@ -104,12 +108,12 @@ const JoyHome = () => {
               </Text>
             </Stack>
             <Stack alignItems={'center'} gap={4}>
-              <Img w={{base:12,md:14,lg:16}} src={km} />
+              <Img w={{ base: 12, md: 14, lg: 16 }} src={km} />
               <Text
                 className="telex-regular"
                 fontSize={'sm'}
                 fontWeight={'600'}
-            textAlign={'center'}
+                textAlign={'center'}
 
               >
                 60-70 Kms{' '}
@@ -120,12 +124,12 @@ const JoyHome = () => {
               </Text>
             </Stack>
             <Stack alignItems={'center'} gap={4}>
-              <Img w={{base:12,md:14,lg:16}} src={speed} />
+              <Img w={{ base: 12, md: 14, lg: 16 }} src={speed} />
               <Text
                 className="telex-regular"
                 fontSize={'sm'}
                 fontWeight={'600'}
-            textAlign={'center'}
+                textAlign={'center'}
 
               >
                 45-50 Kph
@@ -133,12 +137,12 @@ const JoyHome = () => {
               </Text>
             </Stack>
             <Stack alignItems={'center'} gap={4}>
-              <Img w={{base:12,md:14,lg:16}} src={battery} />
+              <Img w={{ base: 12, md: 14, lg: 16 }} src={battery} />
               <Text
                 className="telex-regular"
                 fontSize={'sm'}
                 fontWeight={'600'}
-            textAlign={'center'}
+                textAlign={'center'}
 
               >
                 12 month
@@ -148,7 +152,7 @@ const JoyHome = () => {
                 </chakra.span>
               </Text>
             </Stack>
-            </SimpleGrid>
+          </SimpleGrid>
         </MotionStack>
       </MotionStack>
     </div>

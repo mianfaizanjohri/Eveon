@@ -14,6 +14,7 @@ const OrderPage = () => {
         cnic: '',
         contact: '',
         email: '',
+        address: '', // Add address to the state
     });
 
     useEffect(() => {
@@ -43,6 +44,7 @@ const OrderPage = () => {
                     cnic: formData.cnic,
                     contact: formData.contact,
                     email: formData.email,
+                    address: formData.address, // Include address in the request body
                     product: {
                         name: cart.name,
                         price: cart.price,
@@ -65,7 +67,6 @@ const OrderPage = () => {
             console.error('Error submitting the order:', error);
         }
     };
-
 
     if (!cart) {
         return null; // Return null to avoid rendering the form if cart is undefined
@@ -138,7 +139,7 @@ const OrderPage = () => {
                             />
                         </div>
 
-                        <div className="mb-6">
+                        <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
                                 Email
                             </label>
@@ -147,6 +148,21 @@ const OrderPage = () => {
                                 name="email"
                                 type="email"
                                 value={formData.email}
+                                onChange={handleChange}
+                                className="w-full p-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+                                required
+                            />
+                        </div>
+
+                        <div className="mb-4">
+                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="address">
+                                Address
+                            </label>
+                            <input
+                                id="address"
+                                name="address"
+                                type="text"
+                                value={formData.address}
                                 onChange={handleChange}
                                 className="w-full p-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
                                 required

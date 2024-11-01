@@ -66,9 +66,11 @@ const Header = () => {
             </MenuButton>
             <MenuList>
               {/* MenuItems are not rendered unless Menu is open */}
+              <MenuItem onClick={() => nav('/eveon-leopard-pro')}>Leopard Pro</MenuItem>
               <MenuItem onClick={() => nav('/eveon-leopard')}><Flex><Text>Leopard</Text></Flex></MenuItem>
               <MenuItem onClick={() => nav('/eveon-pronto')}>Pronto</MenuItem>
               <MenuItem onClick={() => nav('/eveon-joy')}>JOY</MenuItem>
+              
             </MenuList>
           </Menu>
           <Link
@@ -136,6 +138,20 @@ const Header = () => {
               </Link>
             )
           }
+         {
+          getuser &&  <Link
+          onClick={() => nav('/admin')}
+          fontWeight={'600'}
+          fontSize={{ base: 12, lg: 16 }}
+          color={'white'}
+          _hover={{
+            textDecoration: 'none',
+            // color: 'black',
+          }}
+        >
+          Admin
+        </Link>
+         }
 
         </Stack>
       </Stack>

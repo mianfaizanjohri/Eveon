@@ -124,7 +124,7 @@ const Cards = () => {
               fontWeight={'400'}
               color={'#000'}
             >
-              The 199000 Size is 12 inch Alloy Rim.
+              The 199000 Size is 10 inch Alloy Rim.
             </Text>
           </Stack>
         </Stack>

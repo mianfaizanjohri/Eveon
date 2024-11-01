@@ -6,19 +6,19 @@ import Cards from '../components/home/Cards';
 import LeopardHome from '../components/home/LeopardHome';
 import ProtonHome from '../components/home/ProtonHome';
 import JoyHome from '../components/home/JoyHome';
-import VideoSection from '../components/home/VideoSection';
-import Carousel from '../components/slider/Carousel';
+import Carousal from '../components/Carousal/Carousal';
+import LeopardProHome from '../components/home/LeopardProHome';
 
 const HomePage = () => {
   return (
     <>
       <Layout>
-        <LeopardHome/>
-        <ProtonHome/>
-        <JoyHome/>
+        <Carousal />
+        <LeopardHome />
+        <ProtonHome />
+        <JoyHome />
+        <LeopardProHome />
         <Cards />
-        {/* <Carousel/> */}
-        {/* <VideoSection/> */}
       </Layout>
     </>
   );

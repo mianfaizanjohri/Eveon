@@ -20,7 +20,8 @@ const DetailPage = () => {
   const [mainImage, setMainImage] = useState(product.images[selectedColor][0]); // Default main image
 
   useEffect(() => {
-    setImageIndex(0); // Reset the image index when the color changes
+    setImageIndex(0); // Reset the image index when the color 
+    window.scrollTo(0, 0);
   }, [selectedColor]);
 
   const handleColorChange = (color) => {

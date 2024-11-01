@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Layout from '../components/layout/Layout';
+import { Link } from 'react-router-dom';
 
 const Admin = () => {
     const [orders, setOrders] = useState([]);
@@ -21,6 +22,18 @@ const Admin = () => {
 
         fetchOrders();
     }, []);
+
+    const deleteOrder = async (id) => {
+        const isConfirmed = window.confirm('Are you sure you want to delete this order?');
+        if (isConfirmed) {
+            try {
+                await axios.delete(`https://api.eveon.pk/deleteorder/${id}`); // Update with your API endpoint
+                setOrders(orders.filter(order => order._id !== id));
+            } catch (error) {
+                setError('Failed to delete order');
+            }
+        }
+    };
 
     return (
         <Layout>
@@ -48,6 +61,9 @@ const Admin = () => {
                                         Email
                                     </th>
                                     <th className="px-6 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                        Address
+                                    </th>
+                                    <th className="px-6 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                         Product Name
                                     </th>
                                     <th className="px-6 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
@@ -55,6 +71,12 @@ const Admin = () => {
                                     </th>
                                     <th className="px-6 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                         Product Color
+                                    </th>
+                                    <th className="px-6 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                        Actions
+                                    </th>
+                                    <th className="px-6 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                        Details
                                     </th>
                                 </tr>
                             </thead>
@@ -74,6 +96,9 @@ const Admin = () => {
                                             {order.email}
                                         </td>
                                         <td className="px-6 py-4 border-b border-gray-200 text-sm">
+                                            {order.address}
+                                        </td>
+                                        <td className="px-6 py-4 border-b border-gray-200 text-sm">
                                             {order.product.name}
                                         </td>
                                         <td className="px-6 py-4 border-b border-gray-200 text-sm">
@@ -82,6 +107,24 @@ const Admin = () => {
                                         <td className="px-6 py-4 border-b border-gray-200 text-sm">
                                             {order.product.color}
                                         </td>
+                                        <td className="px-6 py-4 border-b border-gray-200 text-sm">
+                                            <button
+                                                onClick={() => deleteOrder(order._id)}
+                                                className="text-red-500 hover:text-red-700"
+                                            >
+                                                Delete
+                                            </button>
+                                        </td>
+                                        <Link to={`/print/${order._id}`}>
+                                            <td className="px-6 py-7  border-gray-200 text-sm">
+                                                <button
+                                                    className="text-blue-500 hover:text-red-700"
+                                                >
+                                                    Print
+                                                </button>
+                                            </td>
+                                        </Link>
+
                                     </tr>
                                 ))}
                             </tbody>
