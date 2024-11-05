@@ -93,7 +93,7 @@ export const products = [
         { image: cruidecontrol, title: "Cruise Control" },
       ],
     },
-    price: "Rs 199,000",
+    price: "199000",
     colors: ["white", "Red", "Grey"],
     specifications: {
       Motor: "1200 W BLDC QS",
@@ -189,7 +189,7 @@ export const products = [
         // { image: LCnew, title: "Cruise Control" },
       ],
     },
-    price: "Rs 260,000",
+    price: "260000",
     colors: ["Silver", "Green", "Blue", "White"],
     specifications: {
       Motor: "1200 W BLDC QS",
@@ -276,7 +276,7 @@ export const products = [
         // { image: cruidecontrol, title: "Cruise Control" },
       ],
     },
-    price: "Rs 175,000",
+    price: "175000",
     colors: ["white", "Red", "Grey"],
     specifications: {
       Motor: "1000 W BLDC QS",
@@ -354,7 +354,7 @@ export const products = [
         // { image: cruidecontrol, title: "Cruise Control" },
       ],
     },
-    price: "Rs 200,000",
+    price: "280000",
     colors: ["green", "silver"],
     specifications: {
       Motor: "2000 W QS World Top Class",
@@ -368,7 +368,7 @@ export const products = [
       //   "24 Months Motor & 12 Months Batteries and Controller warranty",
       // TopSpeed: "70 Km/h",
     },
-    description: `The Leopard Pro electric bike is a versatile and affordable option, perfect for bachelors, students, and anyone looking for a practical mode of transportation. It features a 2000 W BLDC QS motor, enabling speeds of 45-50 km/h, making it well-suited for city commutes or casual rides. The bike is equipped with a 72V 38 AH graphene battery, ensuring you can easily cover your daily travel needs.`,
+    description: `The Leopard Pro electric bike is a versatile and affordable option, perfect for bachelors, students, and anyone looking for a practical mode of transportation. It features a 2000 W BLDC QS motor, enabling speeds of 70 km/h, making it well-suited for city commutes or casual rides. The bike is equipped with a 72V 38 AH graphene battery, ensuring you can easily cover your daily travel needs.`,
     detailedSpecifications: [
       {
         title: "Speed",

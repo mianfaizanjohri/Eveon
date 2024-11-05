@@ -32,6 +32,7 @@ const OrderPage = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log(cart)
 
         try {
             const response = await fetch('https://api.eveon.pk/order', {

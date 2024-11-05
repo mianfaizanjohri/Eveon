@@ -58,7 +58,7 @@ const Form = () => {
               color={'#000'}
               lineHeight={'38px'}
             >
-              +92 327 6789786
+              +92 315 9999544
             </Text>
           </HStack>
           <HStack gap={5} alignItems={'center'}>

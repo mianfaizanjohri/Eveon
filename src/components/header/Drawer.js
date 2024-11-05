@@ -86,6 +86,18 @@ const DrawerButton = () => {
                     <AccordionPanel px={0} py={4}>
                       <Stack spacing={3}>
                         <Link
+                          onClick={() => nav('/eveon-leopard-pro')}
+                          fontWeight={'500'}
+                          fontSize={{ base: '0.8rem', xl: '16px' }}
+                          color={'white'}
+                          _hover={{
+                            textDecoration: 'none',
+                            color: 'white',
+                          }}
+                        >
+                          Leopard Pro
+                        </Link>
+                        <Link
                           onClick={() => nav('/eveon-leopard')}
                           fontWeight={'500'}
                           fontSize={{ base: '0.8rem', xl: '16px' }}

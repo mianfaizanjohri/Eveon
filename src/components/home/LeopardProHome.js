@@ -100,7 +100,7 @@ const LeopardProHome = () => {
                 fontWeight={"600"}
                 textAlign={"center"}
               >
-                Rs. 200000{" "}
+                Rs. 280000{" "}
                 <chakra.span fontWeight={"light"}> only! </chakra.span>
               </Text>
             </Stack>
