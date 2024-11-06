@@ -49,14 +49,20 @@ import Jbrake from "../../assets/Pshoot/JOY/Jbrake.png";
 import LMNew from "../../assets/Pshoot/LEOPARD/Gray/LMNew.png";
 import LCnew from "../../assets/Pshoot/LEOPARD/Gray/LCnew.png";
 
-import LP1 from '../../assets/Pshoot/LEOPARD_PRO/LP1.png'
+import LP1 from "../../assets/Pshoot/LEOPARD_PRO/LP1.png";
 import LP2 from "../../assets/Pshoot/LEOPARD_PRO/LP2.png";
 import LP3 from "../../assets/Pshoot/LEOPARD_PRO/LP3.png";
 import LP4 from "../../assets/Pshoot/LEOPARD_PRO/LPW4.png";
 import LP5 from "../../assets/Pshoot/LEOPARD_PRO/LP5.png";
 
-
-
+import ZB1 from "../../assets/Pshoot/ZIPPY/ZB1.png";
+import ZB2 from "../../assets/Pshoot/ZIPPY/ZB2.png";
+import Z3 from "../../assets/Pshoot/ZIPPY/Z3.png";
+import Z4 from "../../assets/Pshoot/ZIPPY/Z4.png";
+import Z5 from "../../assets/Pshoot/ZIPPY/Z5.png";
+import Z6 from "../../assets/Pshoot/ZIPPY/Z6.png";
+import Z7 from "../../assets/Pshoot/ZIPPY/Z7.png";
+import Z8 from "../../assets/Pshoot/ZIPPY/Z8.png";
 
 export const products = [
   {
@@ -334,7 +340,6 @@ export const products = [
     images: {
       green: [LP1, LP2],
       silver: [LP4],
-      
     },
     featureImages: {
       silver: [
@@ -415,6 +420,88 @@ export const products = [
       {
         title: "Side Stand Sensor",
         value: "Available",
+      },
+    ],
+  },
+  {
+    id: 5,
+    name: "ZIPPY",
+    images: {
+      blue: [Z4, Z3, Z5, Z6, Z7, Z8],
+      black: [ZB1, ZB2],
+    },
+    featureImages: {
+      blue: [
+        // { image: Jstorage, title: "Storage Space" },
+        // { image: tyre, title: "Tyre" },
+        // { image: diskbrake, title: "Disk Brake" },
+        { image: Z3, title: "Handle and meter view" },
+        { image: Z4, title: "Full Side view" },
+        { image: Z5, title: "Front Side view" },
+
+        { image: Z6, title: "Top view" },
+        { image: Z7, title: "Head-light and front storage" },
+        { image: Z8, title: "Tyre and Bottom view" },
+
+        // { image: digitalmeter, title: "Digital Meter" },
+        // { image: cruidecontrol, title: "Cruise Control" },
+      ],
+      black: [
+        { image: ZB1, title: "Front view" },
+        { image: ZB2, title: "Tyre and Storage view" },
+        // { image: diskbrake, title: "Disk Brake" },
+        // { image: daylight, title: "Daylight Running Lamp" },
+        // { image: digitalmeter, title: "Digital Meter" },
+        // { image: cruidecontrol, title: "Cruise Control" },
+      ],
+    },
+    price: "97000",
+    colors: ["blue", "black"],
+    specifications: {
+      Motor: "350 W Pure Copper Mottor",
+      Speed: "30 - 35 KM/H",
+      Battery: "48V Top brand Chilwee",
+      Loading: "80 KG",
+      Range: "35 - 40 KM",
+      Brake: "DRUM",
+    },
+    description: `The Zippy electric bike is a versatile and very affordable option, perfect for bachelors, students, and anyone looking for a practical mode of transportation. It features a 350 W motor, enabling speeds of 35 km/h, making it well-suited for city commutes or casual rides. The bike is equipped with a 48V Chilwee Brand battery, ensuring you can easily cover your daily travel needs.`,
+    detailedSpecifications: [
+      {
+        title: "Speed",
+        value: "30 - 35 Km/h",
+      },
+      {
+        title: "Range",
+        value: "35 - 40 Km",
+      },
+      {
+        title: "Battery Type",
+        value: "48V top brand Chilwee",
+      },
+      {
+        title: "Cost",
+        value: "0.5 Unit / Charging",
+      },
+      {
+        title: "Anti-theft System",
+        value: "Available",
+      },
+      {
+        title: "Electric Motor Power",
+        value: "350 Watts",
+      },
+      {
+        title: "Loading",
+        value: "80 kg",
+      },
+      {
+        title: "Warranty Period",
+        value: "12 Months Motor & 06 Months Batteries and Controller warranty",
+      },
+      {
+        title: "Speed Ride",
+        value: "3 Modes available",
       },
     ],
   },

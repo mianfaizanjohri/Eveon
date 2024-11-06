@@ -106,7 +106,7 @@ const DetailPage = () => {
                 <h1 className="text-2xl font-semibold text-gray-800 mb-4">{product.name}</h1>
                 <div className="mb-2 flex gap-2">
                   {/* <p className="text-xl text-gray-400 line-through">{product.price}</p> */}
-                  <p className="text-xl font-bold text-red-600">{product.price}</p>
+                  <p className="text-xl font-bold text-red-600">Rs. {product.price}</p>
                 </div>
 
                 {/* Color Selection */}
