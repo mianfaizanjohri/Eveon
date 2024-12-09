@@ -50,7 +50,7 @@ const ZippyDetail = () => {
             w={{ base: "100%", md: "70%" }}
           >
             Choose from two distinct colors that reflects your personality.
-            Eveon Zippy is available in three colors: Black and Blue.
+            Eveon Zippy is available in two colors: Black and Blue.
           </Text>
         </Stack>
 
@@ -141,7 +141,7 @@ const ZippyDetail = () => {
               color={"#000"}
               lineHeight={"35px"}
             >
-              Eveon Zippy is equipped with 48V Chilwee Brand battery,
+              Eveon Zippy is equipped with 48V 12AH Chilwee Brand battery,
               approximately 8 hours to fully charge. The range of Eveon Zippy is 35 - 40 Km on a single charge, providing plenty of distance
               for a full day’s worth of travel with a max speed of 35 Km/h. This
               model features Anti-theft Alarm system.

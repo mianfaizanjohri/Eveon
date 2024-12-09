@@ -136,7 +136,7 @@ const JoyDetail = () => {
           >
             Eveon JOY is equipped with 60V, 23Ah graphene battery, approximately 5-6 hours to fully charge. The range of Eveon
             JOY is 60-70 Km on a single charge, providing plenty of distance
-            for a full day’s worth of travel with a max speed of 45-50 Km/h. This model features a reverse gear and cruise control mechanism.
+            for a full day’s worth of travel with a max speed of 40-45 Km/h. This model features a reverse gear and cruise control mechanism.
           </Text>
         </Stack>
           <Stack width={{ base: '100%', md: '50%' }} gap={10}>

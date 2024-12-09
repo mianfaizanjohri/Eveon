@@ -138,7 +138,7 @@ const LeopardProDetail = () => {
               color={"#000"}
               lineHeight={"35px"}
             >
-              Eveon Leopard Pro is equipped with 72V, 28Ah graphene battery,
+              Eveon Leopard Pro is equipped with 72V, 38Ah graphene battery,
               approximately 8 hours to fully charge. The range of Eveon Leopard Pro is
               60-70 Km on a single charge, providing plenty of distance for a
               full day’s worth of travel with a max speed of 70 Km/h. This

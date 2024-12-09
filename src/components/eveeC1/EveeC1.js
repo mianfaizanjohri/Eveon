@@ -57,8 +57,8 @@ const EveeC1 = () => {
             w={{ base: '100%', md: '70%' }}
           >
             Choose from three distinct colors that reflects your personality.
-            Eveon Leopard is available in four colors: Silver, White, Green
-            and Blue.
+            Eveon Leopard is available in four colors: Silver, White 
+            and Green.
           </Text>
         </Stack>
    

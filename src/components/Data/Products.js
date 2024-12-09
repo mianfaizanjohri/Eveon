@@ -70,7 +70,7 @@ export const products = [
     name: "PRONTO",
     images: {
       Red: [r1, r3, r2, r4],
-      white: [w1, w2, w3, w4],
+      White: [w1, w2, w3, w4],
       Grey: [Gp, Gpstorage, Gpbrake, Gptyre],
     },
     featureImages: {
@@ -82,7 +82,7 @@ export const products = [
         { image: digitalmeter, title: "Digital Meter" },
         { image: cruidecontrol, title: "Cruise Control" },
       ],
-      white: [
+      White: [
         { image: storage, title: "Storage Space" },
         { image: tyre, title: "10 Inch Alloy Rim Tyre" },
         { image: diskbrake, title: "Front Disk Rear Drum Brake" },
@@ -100,7 +100,7 @@ export const products = [
       ],
     },
     price: "199000",
-    colors: ["white", "Red", "Grey"],
+    colors: ["White", "Red", "Grey"],
     specifications: {
       Motor: "1200 W BLDC QS",
       Speed: "50-55 KM/H",
@@ -158,7 +158,6 @@ export const products = [
     images: {
       Silver: [g1, g2, g3, g4],
       Green: [gre1, gre2, gre3, gre4],
-      Blue: [g1],
       White: [gre1],
     },
     featureImages: {
@@ -178,14 +177,6 @@ export const products = [
         { image: LMNew, title: "Digital Meter" },
         { image: LCnew, title: "Cruise Control" },
       ],
-      Blue: [
-        // { image: Fgrestorage, title: "Storage Space" },
-        // { image: Fgretyre, title: "12 Inch Alloy Rim Tyre" },
-        // { image: Fgrebrake, title: "Front & Rear Bigger Disk Brake" },
-        // { image: Fgrelamp, title: "Daylight Running Lamp" },
-        // { image: LMNew, title: "Digital Meter" },
-        // { image: LCnew, title: "Cruise Control" },
-      ],
       White: [
         // { image: Fgrestorage, title: "Storage Space" },
         // { image: Fgretyre, title: "12 Inch Alloy Rim Tyre" },
@@ -196,7 +187,7 @@ export const products = [
       ],
     },
     price: "260000",
-    colors: ["Silver", "Green", "Blue", "White"],
+    colors: ["Silver", "Green", "White"],
     specifications: {
       Motor: "1200 W BLDC QS",
       Speed: "50-55 KM/H",
@@ -209,7 +200,7 @@ export const products = [
       //   "24 Months Motor & 12 Months Batteries and Controller warranty",
       // TopSpeed: "70 Km/h",
     },
-    description: `The LEOPARD electric bike is our main luxury product, offering a blend of style and power. It comes with a 1200 W motor, enabling speeds of 50-55 km/h. The bike features a 72V 38 AH graphene battery, providing a range of up to 120 km in eco mode. With 12-inch alloy rims, it ensures durability and stability. The front and rear bigger disk brakes offer enhanced safety. Available in grey and green, the bike’s sleek and modern design makes it perfect for city rides.`,
+    description: `The LEOPARD electric bike is our main luxury product, offering a blend of style and power. It comes with a 1200 W motor, enabling speeds of 50-55 km/h. The bike features a 72V 38 AH graphene battery, providing a range of up to 120 km in eco mode. With 12-inch alloy rims, it ensures durability and stability. The front and rear bigger disk brakes offer enhanced safety. Available in grey, white and green, the bike’s sleek and modern design makes it perfect for city rides.`,
     detailedSpecifications: [
       {
         title: "Speed",
@@ -253,42 +244,42 @@ export const products = [
     name: "JOY",
     images: {
       Red: [Rj1, Rj2],
-      white: [Wj1],
+      White: [Wj1],
       Grey: [JG1],
     },
     featureImages: {
       Red: [
         // { image: Rstorage, title: "Storage Space" },
         { image: Jtyre, title: "Tyre" },
-        // { image: Rbrake, title: "Disk Brake" },
-        // { image: Rlamp, title: "Daylight Running Lamp" },
-        // { image: digitalmeter, title: "Digital Meter" },
-        // { image: cruidecontrol, title: "Cruise Control" },
+        { image: Rbrake, title: "Disk Brake" },
+        { image: Rlamp, title: "Daylight Running Lamp" },
+        { image: digitalmeter, title: "Digital Meter" },
+        { image: cruidecontrol, title: "Cruise Control" },
       ],
-      white: [
+      White: [
         { image: Jstorage, title: "Storage Space" },
         { image: Jbrake, title: "Tyre" },
-        // { image: diskbrake, title: "Disk Brake" },
-        // { image: daylight, title: "Daylight Running Lamp" },
-        // { image: digitalmeter, title: "Digital Meter" },
-        // { image: cruidecontrol, title: "Cruise Control" },
+        { image: diskbrake, title: "Disk Brake" },
+        { image: daylight, title: "Daylight Running Lamp" },
+        { image: digitalmeter, title: "Digital Meter" },
+        { image: cruidecontrol, title: "Cruise Control" },
       ],
       Grey: [
-        // { image: Jstorage, title: "Storage Space" },
-        // { image: tyre, title: "Tyre" },
-        // { image: diskbrake, title: "Disk Brake" },
+        { image: Jstorage, title: "Storage Space" },
+        { image: tyre, title: "Tyre" },
+        { image: diskbrake, title: "Disk Brake" },
         { image: JGlamp, title: "Daylight Running Lamp" },
-        // { image: digitalmeter, title: "Digital Meter" },
-        // { image: cruidecontrol, title: "Cruise Control" },
+        { image: digitalmeter, title: "Digital Meter" },
+        { image: cruidecontrol, title: "Cruise Control" },
       ],
     },
     price: "175000",
-    colors: ["white", "Red", "Grey"],
+    colors: ["White", "Red", "Grey"],
     specifications: {
       Motor: "1000 W BLDC QS",
-      Speed: "45-50 KM/H",
+      Speed: "40-45 KM/H",
       Range: "55-60 KM",
-      Battery: "60V 23 AH GRAPHENE",
+      Battery: "60V 26 AH GRAPHENE",
       TyreSize: "10 INCH ALLOY RIM",
       Brake: "FRONT DISK REAR DRUM BRAKE",
       // ElectricMotorPower: "2000 Watts",
@@ -296,11 +287,11 @@ export const products = [
       //   "24 Months Motor & 12 Months Batteries and Controller warranty",
       // TopSpeed: "70 Km/h",
     },
-    description: `The JOY electric bike is a versatile and affordable option, perfect for bachelors, students, and anyone looking for a practical mode of transportation. It features a 1000 W BLDC QS motor, enabling speeds of 45-50 km/h, making it well-suited for city commutes or casual rides. The bike is equipped with a 60V 23 AH graphene battery, providing a range of 55-60 km, ensuring you can easily cover your daily travel needs.`,
+    description: `The JOY electric bike is a versatile and affordable option, perfect for bachelors, students, and anyone looking for a practical mode of transportation. It features a 1000 W BLDC QS motor, enabling speeds of 40-45 km/h, making it well-suited for city commutes or casual rides. The bike is equipped with a 60V 26 AH graphene battery, providing a range of 55-60 km, ensuring you can easily cover your daily travel needs.`,
     detailedSpecifications: [
       {
         title: "Speed",
-        value: "45-50 Km/h",
+        value: "40-45 Km/h",
       },
       {
         title: "Range",
@@ -308,7 +299,7 @@ export const products = [
       },
       {
         title: "Battery Type",
-        value: "60V 23 AH GRAPHENE",
+        value: "60V 26 AH GRAPHENE",
       },
       {
         title: "Electric Motor Power",
@@ -338,29 +329,29 @@ export const products = [
     id: 4,
     name: "LEOPARD PRO",
     images: {
-      green: [LP1, LP2],
-      silver: [LP4],
+      Green: [LP1, LP2],
+      Silver: [LP4],
     },
     featureImages: {
-      silver: [
+      Silver: [
         { image: LP4, title: "Back view" },
-        // { image: diskbrake, title: "Disk Brake" },
-        // { image: daylight, title: "Daylight Running Lamp" },
-        // { image: digitalmeter, title: "Digital Meter" },
-        // { image: cruidecontrol, title: "Cruise Control" },
+        { image: diskbrake, title: "Disk Brake" },
+        { image: daylight, title: "Daylight Running Lamp" },
+        { image: digitalmeter, title: "Digital Meter" },
+        { image: cruidecontrol, title: "Cruise Control" },
       ],
-      green: [
-        // { image: Jstorage, title: "Storage Space" },
-        // { image: tyre, title: "Tyre" },
-        // { image: diskbrake, title: "Disk Brake" },
+      Green: [
+        { image: Jstorage, title: "Storage Space" },
+        { image: tyre, title: "Tyre" },
+        { image: diskbrake, title: "Disk Brake" },
         { image: LP3, title: "Tyre and disk brake" },
         { image: LP5, title: "Handle and meter view" },
-        // { image: digitalmeter, title: "Digital Meter" },
-        // { image: cruidecontrol, title: "Cruise Control" },
+        { image: digitalmeter, title: "Digital Meter" },
+        { image: cruidecontrol, title: "Cruise Control" },
       ],
     },
     price: "280000",
-    colors: ["green", "silver"],
+    colors: ["Green", "Silver"],
     specifications: {
       Motor: "2000 W QS World Top Class",
       Speed: "70 KM/H",
@@ -427,11 +418,11 @@ export const products = [
     id: 5,
     name: "ZIPPY",
     images: {
-      blue: [Z4, Z3, Z5, Z6, Z7, Z8],
-      black: [ZB1, ZB2],
+      Blue: [Z4, Z3, Z5, Z6, Z7, Z8],
+      Black: [ZB1, ZB2],
     },
     featureImages: {
-      blue: [
+      Blue: [
         // { image: Jstorage, title: "Storage Space" },
         // { image: tyre, title: "Tyre" },
         // { image: diskbrake, title: "Disk Brake" },
@@ -446,7 +437,7 @@ export const products = [
         // { image: digitalmeter, title: "Digital Meter" },
         // { image: cruidecontrol, title: "Cruise Control" },
       ],
-      black: [
+      Black: [
         { image: ZB1, title: "Front view" },
         { image: ZB2, title: "Tyre and Storage view" },
         // { image: diskbrake, title: "Disk Brake" },
@@ -456,16 +447,16 @@ export const products = [
       ],
     },
     price: "97000",
-    colors: ["blue", "black"],
+    colors: ["Blue", "Black"],
     specifications: {
       Motor: "350 W Pure Copper Mottor",
       Speed: "30 - 35 KM/H",
-      Battery: "48V Top brand Chilwee",
+      Battery: "48V 12AH Top brand Chilwee",
       Loading: "80 KG",
       Range: "35 - 40 KM",
       Brake: "DRUM",
     },
-    description: `The Zippy electric bike is a versatile and very affordable option, perfect for bachelors, students, and anyone looking for a practical mode of transportation. It features a 350 W motor, enabling speeds of 35 km/h, making it well-suited for city commutes or casual rides. The bike is equipped with a 48V Chilwee Brand battery, ensuring you can easily cover your daily travel needs.`,
+    description: `The Zippy electric bike is a versatile and very affordable option, perfect for bachelors, students, and anyone looking for a practical mode of transportation. It features a 350 W motor, enabling speeds of 35 km/h, making it well-suited for city commutes or casual rides. The bike is equipped with a 48V 12AH Chilwee Brand battery, ensuring you can easily cover your daily travel needs.`,
     detailedSpecifications: [
       {
         title: "Speed",
@@ -477,7 +468,7 @@ export const products = [
       },
       {
         title: "Battery Type",
-        value: "48V top brand Chilwee",
+        value: "48V 12AH top brand Chilwee",
       },
       {
         title: "Cost",
