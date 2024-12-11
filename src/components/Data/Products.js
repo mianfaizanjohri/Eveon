@@ -48,12 +48,20 @@ import JGlamp from "../../assets/Pshoot/JOY/JGlamp.png";
 import Jbrake from "../../assets/Pshoot/JOY/Jbrake.png";
 import LMNew from "../../assets/Pshoot/LEOPARD/Gray/LMNew.png";
 import LCnew from "../../assets/Pshoot/LEOPARD/Gray/LCnew.png";
+import LW1 from '../../assets/images/leopard (2).png'
+import LW2 from "../../assets/images/leopard (3).png";
+import LW3 from "../../assets/images/leopard (4).png";
+
+
 
 import LP1 from "../../assets/Pshoot/LEOPARD_PRO/LP1.png";
 import LP2 from "../../assets/Pshoot/LEOPARD_PRO/LP2.png";
 import LP3 from "../../assets/Pshoot/LEOPARD_PRO/LP3.png";
 import LP4 from "../../assets/Pshoot/LEOPARD_PRO/LPW4.png";
 import LP5 from "../../assets/Pshoot/LEOPARD_PRO/LP5.png";
+import LPW_Main from '../../assets/images/LPW_Main.png';
+
+
 
 import ZB1 from "../../assets/Pshoot/ZIPPY/ZB1.png";
 import ZB2 from "../../assets/Pshoot/ZIPPY/ZB2.png";
@@ -158,7 +166,7 @@ export const products = [
     images: {
       Silver: [g1, g2, g3, g4],
       Green: [gre1, gre2, gre3, gre4],
-      White: [gre1],
+      White: [LW1, LW2, LW3],
     },
     featureImages: {
       Silver: [
@@ -178,9 +186,9 @@ export const products = [
         { image: LCnew, title: "Cruise Control" },
       ],
       White: [
-        // { image: Fgrestorage, title: "Storage Space" },
-        // { image: Fgretyre, title: "12 Inch Alloy Rim Tyre" },
-        // { image: Fgrebrake, title: "Front & Rear Bigger Disk Brake" },
+        { image: LW2, title: "Storage Space" },
+        { image: LW3, title: "12 Inch Alloy Rim Tyre" },
+        { image: LW1, title: "Rear View" },
         // { image: Fgrelamp, title: "Daylight Running Lamp" },
         // { image: LMNew, title: "Digital Meter" },
         // { image: LCnew, title: "Cruise Control" },
@@ -331,6 +339,7 @@ export const products = [
     images: {
       Green: [LP1, LP2],
       Silver: [LP4],
+      White: [LPW_Main],
     },
     featureImages: {
       Silver: [
@@ -349,9 +358,17 @@ export const products = [
         { image: digitalmeter, title: "Digital Meter" },
         { image: cruidecontrol, title: "Cruise Control" },
       ],
+      White: [
+        { image: LPW_Main, title: "Front view" },
+
+        { image: LP4, title: "Back view" },
+        { image: diskbrake, title: "Disk Brake" },
+        { image: digitalmeter, title: "Digital Meter" },
+        { image: cruidecontrol, title: "Cruise Control" },
+      ],
     },
     price: "280000",
-    colors: ["Green", "Silver"],
+    colors: ["Green", "Silver", "White"],
     specifications: {
       Motor: "2000 W QS World Top Class",
       Speed: "70 KM/H",
