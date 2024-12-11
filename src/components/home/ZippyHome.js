@@ -124,7 +124,7 @@ const ZippyHome = () => {
                 fontWeight={"600"}
                 textAlign={"center"}
               >
-                48V
+                48V 12AH
                 <chakra.span fontWeight={"light"}>
                   {" "}
                   Chilwee Brand{" "}
