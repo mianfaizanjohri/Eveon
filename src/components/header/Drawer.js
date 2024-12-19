@@ -147,7 +147,18 @@ const DrawerButton = () => {
                             color: "white",
                           }}
                         >
-                          Zippy
+                          Pearl
+                        </Link>
+                        <Link
+                          onClick={() => nav("/eveon-pearl")}
+                          fontWeight={"500"}
+                          fontSize={{ base: "0.8rem", xl: "16px" }}
+                          color={"white"}
+                          _hover={{
+                            textDecoration: "none",
+                            color: "white",
+                          }}
+                        >
                         </Link>
                       </Stack>
                     </AccordionPanel>

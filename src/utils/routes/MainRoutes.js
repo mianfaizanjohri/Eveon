@@ -18,6 +18,7 @@ import Whatsapp from '../../components/Whatsapp/Whatsapp';
 import Print from '../../screens/Print';
 import LeopardProDetail from '../../components/models/LeopardProDetail';
 import ZippyDetail from '../../components/models/ZippyDetail';
+import PearlDetail from '../../components/models/PearlDeatail';
 
 const MainRoutes = () => {
   return (
@@ -29,6 +30,7 @@ const MainRoutes = () => {
         <Route path="/eveon-leopard" element={<Eveon />} />
         <Route path="/eveon-pronto" element={<ProntoDetail />} />
         <Route path="/eveon-joy" element={<JoyDetail />} />
+        <Route path="/eveon-pearl" element={<PearlDetail />} />
         <Route path="/eveon-leopard-pro" element={<LeopardProDetail />} />
         <Route path="/eveon-zippy" element={<ZippyDetail />} />
         <Route path="/contact" element={<Contact />} />

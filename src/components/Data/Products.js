@@ -72,6 +72,19 @@ import Z6 from "../../assets/Pshoot/ZIPPY/Z6.png";
 import Z7 from "../../assets/Pshoot/ZIPPY/Z7.png";
 import Z8 from "../../assets/Pshoot/ZIPPY/Z8.png";
 
+import PG1 from "../../assets/Pshoot/PEARL/pgreen/PG1.png";
+import PG2 from "../../assets/Pshoot/PEARL/pgreen/PG2.png";
+import PG3 from "../../assets/Pshoot/PEARL/pgreen/PG3.png";
+import PG4 from "../../assets/Pshoot/PEARL/pgreen/PG4.png";
+import p1 from "../../assets/Pshoot/PEARL/psilver/p1.png";
+import p2 from "../../assets/Pshoot/PEARL/psilver/p2.png";
+import PM from "../../assets/Pshoot/PEARL/psilver/PM.png";
+import PG10 from "../../assets/Pshoot/PEARL/pgreen/PG10.png";
+import PG8 from "../../assets/Pshoot/PEARL/pgreen/PG8.png";
+
+
+
+
 export const products = [
   {
     id: 1,
@@ -511,6 +524,89 @@ export const products = [
         title: "Speed Ride",
         value: "3 Modes available",
       },
+
+      {
+        id: 6,
+        name: "PEARL",
+        images: {
+          green : [PG1, PG2, PG3, PG4],
+          Black: [p1, p2],
+        },
+        featureImages: {
+          Blue: [
+            // { image: Jstorage, title: "Storage Space" },
+            // { image: tyre, title: "Tyre" },
+            // { image: diskbrake, title: "Disk Brake" },
+            { image: PM, title: "Handle and meter view" },
+            { image: PG10, title: "Full Side view" },
+            { image: PG8, title: "Front Side view" },
+    
+            { image: Z6, title: "Top view" },
+            { image: Z7, title: "Head-light and front storage" },
+            { image: Z8, title: "Tyre and Bottom view" },
+    
+            // { image: digitalmeter, title: "Digital Meter" },
+            // { image: cruidecontrol, title: "Cruise Control" },
+          ],
+          Black: [
+            { image: ZB1, title: "Front view" },
+            { image: ZB2, title: "Tyre and Storage view" },
+            // { image: diskbrake, title: "Disk Brake" },
+            // { image: daylight, title: "Daylight Running Lamp" },
+            // { image: digitalmeter, title: "Digital Meter" },
+            // { image: cruidecontrol, title: "Cruise Control" },
+          ],
+        },
+        price: "159000",
+        colors: ["Silver", "Green"],
+        specifications: {
+          Motor: "800 W Pure Copper Mottor",
+          Speed: "55 - 60 KM/H",
+          Battery: "60V 23AH Top brand Chilwee",
+          Loading: "80 KG",
+          Range: "55 - 60 KM",
+          Brake: "DRUM",
+        },
+        description: `The Pearl electric bike is a versatile and very affordable option, perfect for bachelors, students, and anyone looking for a practical mode of transportation. It features a 800 W motor, enabling speeds of 55 km/h, making it well-suited for city commutes or casual rides. The bike is equipped with a 60V 28AH Chilwee Brand battery, ensuring you can easily cover your daily travel needs.`,
+        detailedSpecifications: [
+          {
+            title: "Speed",
+            value: "55 - 60 Km/h",
+          },
+          {
+            title: "Range",
+            value: "55 - 60 Km",
+          },
+          {
+            title: "Battery Type",
+            value: "60V 23AH top brand Chilwee",
+          },
+          {
+            title: "Cost",
+            value: "0.5 Unit / Charging",
+          },
+          {
+            title: "Anti-theft System",
+            value: "Available",
+          },
+          {
+            title: "Electric Motor Power",
+            value: "800 Watts",
+          },
+          {
+            title: "Loading",
+            value: "80 kg",
+          },
+          {
+            title: "Warranty Period",
+            value: "12 Months Motor & 06 Months Batteries and Controller warranty",
+          },
+          {
+            title: "Speed Ride",
+            value: "3 Modes available",
+          },    
+        ],
+      },
     ],
   },
-];
+];    

@@ -14,6 +14,7 @@ import logo from '../../assets/images/EVEE-Logo.png';
 import { useNavigate } from 'react-router-dom';
 import Drawer from './Drawer';
 
+
 const Header = () => {
   const nav = useNavigate();
 
@@ -76,6 +77,7 @@ const Header = () => {
               <MenuItem onClick={() => nav("/eveon-pronto")}>Pronto</MenuItem>
               <MenuItem onClick={() => nav("/eveon-joy")}>JOY</MenuItem>
               <MenuItem onClick={() => nav("/eveon-zippy")}>Zippy</MenuItem>
+              <MenuItem onclick={() => nav("/eveon-pearl")}>Pearl</MenuItem>
             </MenuList>
           </Menu>
           <Link

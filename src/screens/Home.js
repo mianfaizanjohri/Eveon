@@ -7,6 +7,7 @@ import JoyHome from '../components/home/JoyHome';
 import Carousal from '../components/Carousal/Carousal';
 import LeopardProHome from '../components/home/LeopardProHome';
 import ZippyHome from '../components/home/ZippyHome';
+import PearlHome from '../components/home/PearlHome';
 
 const HomePage = () => {
   return (
@@ -14,6 +15,7 @@ const HomePage = () => {
       <Layout>
         <Carousal />
         <LeopardHome />
+        <PearlHome/>
         <ProtonHome />
         <JoyHome />
         <LeopardProHome />
